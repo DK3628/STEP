@@ -1,0 +1,31 @@
+import java.util.*;
+
+class StudentRecordParser
+{
+    void parseStudentRecord(String csvLine)
+    {
+        String fields[] = csvLine.split(",");
+
+        if(fields.length != 3)
+        {
+            System.out.println("Invalid Record");
+        }
+        else
+        {
+            System.out.println("Name: " + fields[0] +
+                               " | Roll No: " + fields[1] +
+                               " | Dept: " + fields[2]);
+        }
+    }
+
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter student record: ");
+        String csvLine = sc.nextLine();
+
+        StudentRecordParser obj = new StudentRecordParser();
+        obj.parseStudentRecord(csvLine);
+    }
+}
